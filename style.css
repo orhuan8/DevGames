@@ -1,0 +1,1276 @@
+/* ==========================================================================
+   DEVGAMES - FOLHA DE ESTILOS EXTERNA (style.css)
+   Trabalho Prático Integrador - Front End
+   Desenvolvido por: Arthur Miguel, Eduardo Vinicius e Rhuan Urias
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   VARIÁVEIS CSS (TEMA CLARO E TEMA ESCURO)
+   -------------------------------------------------------------------------- */
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #222222;
+    --text-muted: #666666;
+    --primary-color: #d11515;
+    --primary-hover: #b00f0f;
+    --primary-glow: rgba(209, 21, 21, 0.25);
+    --card-bg: #ffffff;
+    --card-border: #e2e4ec;
+    --nav-bg: #2d3039;
+    --header-bg: #d11515;
+    --footer-bg: #1e2026;
+    --lateral-bg: #ffffff;
+    --table-stripe: #f8f9fd;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+}
+
+/* Classe ativada via JavaScript para o Tema Escuro global */
+body.tema-escuro {
+    --bg-color: #14151a;
+    --text-color: #f1f2f8;
+    --text-muted: #9ba1b0;
+    --primary-color: #d11515;
+    --primary-hover: #e02828;
+    --primary-glow: rgba(209, 21, 21, 0.35);
+    --card-bg: #1e2029;
+    --card-border: #2f3342;
+    --nav-bg: #181921;
+    --header-bg: #8f0e0e;
+    --footer-bg: #0f1015;
+    --lateral-bg: #1c1e27;
+    --table-stripe: #252834;
+    --shadow-color: rgba(0, 0, 0, 0.45);
+}
+
+/* ==========================================================================
+   DEMONSTRAÇÃO OBRIGATÓRIA DOS SELETORES CSS (COM COMENTÁRIOS IDENTIFICADORES)
+   ========================================================================== */
+
+/* 1. SELETOR DE TAG */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 2. SELETOR DE ID */
+#container {
+    max-width: 1220px;
+    margin: 0 auto;
+    background-color: var(--bg-color);
+    box-shadow: 0 0 25px var(--shadow-color);
+    min-height: 100vh;
+    border-radius: var(--radius-sm);
+}
+
+/* 3. SELETOR DE CLASSE (CONVENÇÃO DE NOMES DO INTEGRANTE EDUARDO) */
+.eduardo_cabecalho {
+    position: relative;
+    background: radial-gradient(circle at 50% 25%, var(--primary-glow) 0%, rgba(18, 20, 29, 0.96) 65%, #0e0f14 100%);
+    color: #ffffff;
+    padding: 38px 20px 30px 20px;
+    text-align: center;
+    transition: all 0.35s ease;
+    border-bottom: 2px solid var(--primary-color);
+    box-shadow: 0 4px 30px var(--primary-glow);
+    overflow: hidden;
+}
+
+/* Feixe de luz decorativo de topo */
+.eduardo_cabecalho::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 160px;
+    background: radial-gradient(ellipse at center, var(--primary-glow) 0%, transparent 70%);
+    pointer-events: none;
+    opacity: 0.9;
+    transition: all 0.35s ease;
+}
+
+/* Selo Gamer moderno no topo do cabeçalho */
+.badge-portal-gamer {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px);
+}
+
+/* 4. SELETOR AGRUPADO */
+h1, h2, h3, h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: inherit;
+    letter-spacing: -0.3px;
+}
+
+/* 5. SELETOR ENCADEADO (CONVENÇÃO DE NOMES DO INTEGRANTE ARTHUR) */
+.arthur_nav ul li a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.2px;
+}
+
+/* Hover no seletor encadeado */
+.arthur_nav ul li a:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 3px 12px var(--primary-glow), 0 0 10px var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   ESTRUTURA DE CABEÇALHO, MENU E RODAPÉ
+   -------------------------------------------------------------------------- */
+.eduardo_titulo {
+    font-size: 46px;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+    margin: 0 0 6px 0;
+    text-transform: uppercase;
+    text-shadow: 0 0 28px var(--primary-color), 0 2px 4px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(180deg, #ffffff 40%, #ffcaca 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.eduardo_cabecalho p {
+    margin: 0;
+    font-size: 15px;
+    color: #e5e7eb;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.eduardo_btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 13.5px;
+    font-weight: 700;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 10px var(--primary-glow);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.eduardo_btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--primary-glow);
+}
+
+.eduardo_btn:active {
+    transform: translateY(0);
+}
+
+/* Estilo de botão associado ao integrante Rhuan Urias */
+.rhuan_btn {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #333344 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.arthur_nav {
+    background: linear-gradient(180deg, #181922 0%, #111218 100%);
+    padding: 12px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background-color 0.3s ease;
+    backdrop-filter: blur(12px);
+}
+
+.arthur_nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.eduardo_rodape {
+    background-color: var(--footer-bg);
+    color: #c5c7d0;
+    text-align: center;
+    padding: 28px 20px;
+    margin-top: 35px;
+    font-size: 13.5px;
+    border-top: 3px solid var(--primary-color);
+    transition: background-color 0.3s ease;
+}
+
+.eduardo_rodape p {
+    margin: 6px 0;
+}
+
+.eduardo_voltar_topo {
+    text-align: right;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* --------------------------------------------------------------------------
+   IMAGENS GERAIS E BANNER MODERNO
+   -------------------------------------------------------------------------- */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-sm);
+}
+
+.banner-destaque {
+    background-color: var(--card-bg);
+    padding: 24px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--card-border);
+    margin-bottom: 25px;
+    box-shadow: 0 6px 20px var(--shadow-color);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Link envolvente para o banner completo (clicável sem sobreposições) */
+.banner-link-inteiro {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 6px 18px var(--shadow-color);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    outline: none;                            /* Remove o contorno azul padrão do navegador */
+    -webkit-tap-highlight-color: transparent; /* Remove destaque azul no toque (mobile/Safari) */
+}
+
+.banner-link-inteiro:focus,
+.banner-link-inteiro:focus-visible {
+    outline: none; /* Garante que o contorno não apareça ao clicar ou navegar por teclado */
+}
+
+.banner-link-inteiro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px var(--shadow-color), 0 0 15px var(--primary-glow);
+}
+
+.banner-link-inteiro img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-top: 0;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.banner-link-inteiro:hover img {
+    transform: scale(1.008);
+}
+
+/* Ações extras e tags de jogos do banner */
+.banner-acoes-extras {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.banner-cta-btn {
+    text-decoration: none;
+    font-size: 14px;
+    padding: 12px 26px;
+}
+
+.banner-jogos-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.secao-conteudo {
+    margin-bottom: 35px;
+}
+
+/* ==========================================================================
+   CSS GRID: TRÊS APLICAÇÕES OBRIGATÓRIAS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   /* GRID C: LAYOUT PRINCIPAL DO PORTAL COM ÁREAS NOMEADAS (grid-template-areas)
+   -------------------------------------------------------------------------- */
+.layout-principal {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    grid-template-areas: "lateral principal";
+    gap: 25px;
+    box-sizing: border-box;
+}
+
+.arthur_lateral {
+    grid-area: lateral;
+    background-color: var(--lateral-bg);
+    padding: 22px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border-radius: var(--radius-md);
+    align-self: start;
+    transition: all 0.3s ease;
+}
+
+.conteudo-central {
+    grid-area: principal;
+    min-width: 0;
+}
+
+/* Itens da barra lateral */
+.lista-filtros-lateral {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 25px 0;
+}
+
+.lista-filtros-lateral li {
+    margin-bottom: 10px;
+}
+
+.lista-filtros-lateral li a {
+    display: block;
+    padding: 9px 14px;
+    background-color: rgba(128, 128, 128, 0.08);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    font-size: 13.5px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.lista-filtros-lateral li a:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    transform: translateX(4px);
+    border-left-color: #ffffff;
+    box-shadow: 0 3px 10px var(--primary-glow);
+}
+
+.bloco-info-lateral {
+    border-top: 1px dashed var(--card-border);
+    padding-top: 16px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   /* GRID A: CARDS DE JOGOS COM repeat(4, 1fr) E MESMA PROPORÇÃO
+   -------------------------------------------------------------------------- */
+.grid-a {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 18px;
+}
+
+.eduardo_card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 4px 16px var(--shadow-color);
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.eduardo_card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px var(--shadow-color), 0 0 12px var(--primary-glow);
+    border-color: var(--primary-color);
+}
+
+.eduardo_card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    margin-bottom: 12px;
+}
+
+.eduardo_card h3 {
+    font-size: 16px;
+    margin: 8px 0;
+    line-height: 1.3;
+}
+
+.eduardo_card .btn-detalhes-jogo {
+    margin-top: 12px;
+    width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   /* GRID B: GALERIA COM COLUNAS DESIGUAIS (1fr 2fr 1fr)
+   -------------------------------------------------------------------------- */
+.grid-b {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 16px;
+    align-items: center;
+    margin-top: 18px;
+    margin-bottom: 28px;
+}
+
+.grid-b img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.grid-b img:hover {
+    transform: scale(1.03);
+    filter: brightness(1.08);
+}
+
+/* ==========================================================================
+   SEÇÃO 2: TABELA 10x6 SEMÂNTICA MODERNA
+   ========================================================================== */
+.tabela-responsiva {
+    width: 100%;
+    overflow-x: auto;
+    margin: 18px 0;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 16px var(--shadow-color);
+}
+
+.arthur_tabela {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    font-size: 13.5px;
+}
+
+.arthur_tabela caption {
+    caption-side: top;
+    font-weight: 700;
+    padding: 10px 6px;
+    text-align: left;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.arthur_tabela th, 
+.arthur_tabela td {
+    border: 1px solid var(--card-border);
+    padding: 12px 14px;
+    text-align: left;
+}
+
+.arthur_tabela thead th {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.arthur_tabela tbody tr:nth-child(even) {
+    background-color: var(--table-stripe);
+}
+
+.arthur_tabela tbody tr:hover {
+    background-color: var(--primary-glow);
+}
+
+/* ==========================================================================
+   BLOCOS INTERATIVOS DAS FUNCIONALIDADES D, E E F
+   ========================================================================== */
+.bloco-interativo {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    margin-top: 18px;
+    box-shadow: 0 4px 18px var(--shadow-color);
+}
+
+/* --------------------------------------------------------------------------
+   FUNCIONALIDADE D: CARROSSEL DE GAMEPLAY COM INCLUSÃO DE IMAGEM
+   -------------------------------------------------------------------------- */
+.eduardo_carrossel_container {
+    text-align: center;
+}
+
+.carrossel-moldura {
+    max-width: 740px;
+    margin: 18px auto;
+    background-color: rgba(0, 0, 0, 0.04);
+    padding: 14px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--card-border);
+    box-shadow: inset 0 2px 8px var(--shadow-color);
+}
+
+.carrossel-moldura img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    margin: 0 auto;
+}
+
+.carrossel-legenda-texto {
+    font-size: 15.5px;
+    font-weight: 700;
+    margin: 12px 0 4px 0;
+    color: var(--text-color);
+}
+
+.carrossel-contador-texto {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+    font-weight: 600;
+}
+
+.carrossel-controles {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 18px 0 25px 0;
+}
+
+.carrossel-controles button:disabled {
+    background-color: #888888;
+    cursor: not-allowed;
+    opacity: 0.45;
+    transform: none;
+    box-shadow: none;
+}
+
+.carrossel-upload-box {
+    max-width: 620px;
+    margin: 22px auto 0 auto;
+    padding: 20px;
+    border-top: 1px dashed var(--card-border);
+    text-align: left;
+}
+
+.carrossel-upload-box h4 {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.carrossel-upload-box label {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.carrossel-upload-box input[type="file"],
+.carrossel-upload-box input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    box-sizing: border-box;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: inherit;
+}
+
+.carrossel-upload-box button {
+    margin-top: 15px;
+    width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   FUNCIONALIDADE E: LISTA DE DESEJOS DINÂMICA
+   -------------------------------------------------------------------------- */
+.desejos-input-grupo {
+    margin-bottom: 18px;
+}
+
+.desejos-input-grupo label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.desejos-linha-adicionar {
+    display: flex;
+    gap: 12px;
+}
+
+.desejos-linha-adicionar input[type="text"] {
+    flex: 1;
+    padding: 11px 14px;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.desejos-acoes-painel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin: 18px 0;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.desejos-filtros {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.filtro-btn {
+    background-color: rgba(128, 128, 128, 0.12);
+    color: var(--text-color);
+    border: 1px solid var(--card-border);
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filtro-btn:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    box-shadow: 0 2px 8px var(--primary-glow);
+}
+
+.filtro-btn.ativo {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px var(--primary-glow);
+}
+
+.btn-perigo {
+    background-color: #991b1b;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-perigo:hover {
+    background-color: #b91c1c;
+    transform: translateY(-1px);
+}
+
+.desejos-resumo-contadores {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-color);
+    display: flex;
+    gap: 15px;
+}
+
+.desejos-lista-itens {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.desejo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 10px;
+    background-color: var(--bg-color);
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+
+.desejo-item.comprado {
+    opacity: 0.72;
+    background-color: rgba(46, 139, 87, 0.08);
+    border-color: #2e8b57;
+}
+
+.desejo-item.comprado .desejo-texto {
+    text-decoration: line-through;
+}
+
+.desejo-texto {
+    flex: 1;
+    font-weight: 600;
+}
+
+.desejo-botoes {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-acao-item {
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.btn-acao-item:hover {
+    transform: translateY(-1px);
+}
+
+.btn-status-comprado {
+    background-color: #2e8b57;
+    color: white;
+}
+
+.btn-status-pendente {
+    background-color: #d97706;
+    color: white;
+}
+
+.btn-editar-item {
+    background-color: #0284c7;
+    color: white;
+}
+
+.btn-excluir-item {
+    background-color: #dc2626;
+    color: white;
+}
+
+/* --------------------------------------------------------------------------
+   FUNCIONALIDADE F: PERSONALIZAÇÃO VISUAL INDEPENDENTE
+   -------------------------------------------------------------------------- */
+.painel-tema-geral,
+.painel-areas-independentes,
+.painel-restaurar {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.painel-restaurar {
+    border-bottom: none;
+}
+
+.botoes-personalizar-topo {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.grade-botoes-personalizar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.card-controle-cor {
+    background-color: var(--bg-color);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-sm);
+    padding: 14px;
+    text-align: center;
+    font-size: 13px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.card-controle-cor strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.card-controle-cor p {
+    font-size: 12px;
+    margin-bottom: 12px;
+    color: var(--text-muted);
+}
+
+.btn-custom-area {
+    background-color: #3f4756;
+    color: #ffffff;
+    border: none;
+    padding: 9px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+.btn-custom-area:hover {
+    background-color: #272d38;
+    transform: translateY(-1px);
+}
+
+.btn-restaurar {
+    background-color: #4b5563;
+    color: #ffffff;
+    border: none;
+    padding: 11px 24px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-restaurar:hover {
+    background-color: #1f2937;
+    transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   CLASSES DE CORES ALTERNATIVAS PARA AS 5 ÁREAS (FUNCIONALIDADE F)
+   -------------------------------------------------------------------------- */
+
+/* Área 1: Cabeçalho Alternativo (Roxo Gamer Elegante) */
+.eduardo_cabecalho_alt {
+    background: linear-gradient(135deg, #5b1aa8 0%, #170d2e 100%) !important;
+    border-bottom: 3px solid #00d2ff !important;
+}
+
+/* Área 2: Menu / Nav Alternativo (Preto Profundo com Borda Dourada) */
+.arthur_nav_alt {
+    background-color: #0d0e12 !important;
+    border-bottom: 2px solid #d4af37 !important;
+}
+.arthur_nav_alt ul li a:hover {
+    background-color: #d4af37 !important;
+    color: #111111 !important;
+}
+
+/* Área 3: Cards Alternativos (Realce Neon Azul e Sombra Forte) */
+.cards_alt .eduardo_card {
+    border-color: #0284c7 !important;
+    box-shadow: 0 4px 18px rgba(2, 132, 199, 0.35) !important;
+}
+
+/* Área 4: Lateral Alternativa (Fundo Marinho Noturno) */
+.arthur_lateral_alt {
+    background-color: #0f172a !important;
+    color: #f8fafc !important;
+    border-color: #38bdf8 !important;
+}
+.arthur_lateral_alt .lista-filtros-lateral li a {
+    color: #f8fafc !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+.arthur_lateral_alt .lista-filtros-lateral li a:hover {
+    background-color: #38bdf8 !important;
+    color: #0f172a !important;
+}
+
+/* Área 5: Rodapé Alternativo (Carmim Noturno com Linha Dourada) */
+.eduardo_rodape_alt {
+    background-color: #5c0914 !important;
+    border-top: 3px solid #facc15 !important;
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   SEÇÕES 6 A 10: GÊNEROS, PLATAFORMAS, PROMOÇÕES, SOBRE E DICAS
+   ========================================================================== */
+
+/* Seção 6: Gêneros */
+.arthur_grade_generos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.genero-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    padding: 18px;
+    box-shadow: 0 4px 14px var(--shadow-color);
+    transition: transform 0.2s ease;
+}
+
+.genero-card:hover {
+    transform: translateY(-3px);
+}
+
+.genero-card h3 {
+    font-size: 16.5px;
+    color: var(--primary-color);
+}
+
+.genero-card p {
+    font-size: 13.5px;
+    margin-bottom: 14px;
+    color: var(--text-muted);
+}
+
+/* Seção 7: Plataformas */
+.plataformas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.plataforma-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    padding: 18px;
+    box-shadow: 0 4px 14px var(--shadow-color);
+    border-left: 4px solid var(--primary-color);
+    transition: transform 0.2s ease;
+}
+
+.plataforma-item:hover {
+    transform: translateY(-3px);
+}
+
+.plataforma-item h3 {
+    font-size: 16px;
+}
+
+.plataforma-item p {
+    font-size: 13.5px;
+    margin: 0;
+    color: var(--text-muted);
+}
+
+/* Seção 8: Promoções (com classes associadas a Rhuan Urias) */
+.promocoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.eduardo_promo_card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    padding: 22px;
+    position: relative;
+    box-shadow: 0 4px 16px var(--shadow-color);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.eduardo_promo_card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+}
+
+.selo-desconto {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px var(--primary-glow);
+}
+
+.preco-antigo {
+    text-decoration: line-through;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin: 6px 0 0 0;
+}
+
+/* Seção 9: Sobre */
+.sobre-box {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 22px;
+    align-items: center;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: 0 4px 16px var(--shadow-color);
+}
+
+.sobre-imagem img {
+    width: 100%;
+    max-height: 290px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 14px var(--shadow-color);
+}
+
+/* Seção 10: Dicas */
+.dicas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+    margin-top: 18px;
+}
+
+.dicas-bloco {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    padding: 22px;
+    box-shadow: 0 4px 16px var(--shadow-color);
+}
+
+.dicas-bloco h3 {
+    font-size: 16px;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 10px;
+}
+
+.arthur_dicas_lista {
+    padding-left: 20px;
+    font-size: 13.5px;
+    line-height: 1.9;
+}
+
+/* ==========================================================================
+   SEÇÃO 11: FORMULÁRIO SEMÂNTICO DE CADASTRO
+   ========================================================================== */
+.arthur_form fieldset {
+    border: 1px solid var(--card-border);
+    padding: 26px;
+    background-color: var(--card-bg);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.arthur_form legend {
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--primary-color);
+    padding: 0 12px;
+}
+
+.campo-form {
+    margin-bottom: 16px;
+}
+
+.campo-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.campo-form input[type="text"],
+.campo-form input[type="email"],
+.campo-form input[type="password"],
+.campo-form input[type="number"],
+.campo-form input[type="date"],
+.campo-form input[type="tel"],
+.campo-form select,
+.campo-form textarea {
+    width: 100%;
+    padding: 11px 14px;
+    box-sizing: border-box;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.campo-form input:focus,
+.campo-form select:focus,
+.campo-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.grupo-radio,
+.grupo-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.grupo-radio label.label-inline,
+.grupo-checkbox label.label-inline {
+    display: inline;
+    margin: 0;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.grupo-radio input[type="radio"],
+.grupo-checkbox input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+}
+
+#form-btn-enviar {
+    width: 100%;
+    padding: 13px;
+    font-size: 16px;
+    margin-top: 12px;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (RESPONSIVIDADE E ADAPTAÇÃO DAS GRADES)
+   ========================================================================== */
+
+/* Telas menores que 992px: adaptação intermediária do Grid A */
+@media (max-width: 992px) {
+    .grid-a {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .sobre-box {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Telas menores que 768px (Tablets e Mobile) */
+@media (max-width: 768px) {
+    /* Reorganização obrigatória do GRID C: lateral passa para cima em uma coluna */
+    .layout-principal {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "lateral"
+            "principal";
+        gap: 20px;
+    }
+
+    /* Adaptação obrigatória do GRID B: colunas passam para 1 coluna */
+    .grid-b {
+        grid-template-columns: 1fr;
+    }
+
+    .arthur_nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .desejos-linha-adicionar {
+        flex-direction: column;
+    }
+
+    .desejos-acoes-painel {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .carrossel-moldura img {
+        height: 250px;
+    }
+}
+
+/* Telas menores que 480px (Smartphones compactos) */
+@media (max-width: 480px) {
+    /* Grid A passa para coluna única */
+    .grid-a {
+        grid-template-columns: 1fr;
+    }
+
+    .eduardo_titulo {
+        font-size: 28px;
+    }
+
+    .carrossel-controles {
+        flex-direction: column;
+    }
+}

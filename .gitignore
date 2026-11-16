@@ -1,0 +1,11 @@
+# Arquivos temporários do sistema operacional
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Diretórios de IDEs
+.vscode/
+.idea/
+*.sublime-workspace

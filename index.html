@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevGames - Arthur Miguel, Eduardo Vinicius e Rhuan Urias</title>
+    <!-- Folha de estilos externa principal -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Folha de estilos interna: formata pelo menos 5 elementos/classes -->
+    <style>
+        .texto-destaque { color: var(--primary-color); font-weight: bold; }
+        .aviso-idade { font-size: 12px; font-style: italic; }
+        hr.divisor { border: 0; border-top: 1px solid var(--card-border, #ccc); margin: 25px 0; }
+        .link-topo { display: inline-block; margin-top: 12px; font-size: 13px; color: var(--primary-color); text-decoration: none; font-weight: bold; transition: 0.2s ease; }
+        .link-topo:hover { text-decoration: underline; transform: translateY(-1px); }
+        .tag-destaque { display: inline-block; padding: 4px 10px; font-size: 11px; border-radius: 20px; background: rgba(128, 128, 128, 0.12); font-weight: 600; }
+    </style>
+</head>
+<body id="container">
+
+    <!-- HEADER: Utilizado uma única vez -->
+    <header class="eduardo_cabecalho" id="topo">
+        <div class="badge-portal-gamer">⚡ PORTAL OFICIAL DE JOGOS VIRTUAIS</div>
+        <h1 class="eduardo_titulo">DevGames</h1>
+        <p>A sua loja virtual definitiva de jogos e cultura gamer</p>
+    </header>
+
+    <!-- NAV: Utilizado uma única vez com menu e links internos para as seções -->
+    <nav class="arthur_nav">
+        <ul>
+            <li><a href="#loja">🎮 Loja</a></li>
+            <li><a href="#lancamentos">📅 Lançamentos</a></li>
+            <li><a href="#galeria">🖼️ Galeria</a></li>
+            <li><a href="#desejos">❤️ Lista de Desejos</a></li>
+            <li><a href="#personalizar">🎨 Personalizar</a></li>
+            <li><a href="#generos">⚔️ Gêneros</a></li>
+            <li><a href="#plataformas">🖥️ Plataformas</a></li>
+            <li><a href="#promocoes">🔥 Promoções</a></li>
+            <li><a href="#sobre">ℹ️ Sobre</a></li>
+            <li><a href="#dicas">💡 Dicas</a></li>
+            <li><a href="#contato">📝 Cadastro</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN: Utilizado uma única vez (CSS Inline 1 de 3: padding) -->
+    <main class="layout-principal" style="padding: 15px;">
+
+        <!-- ASIDE: Utilizado para a barra lateral de filtros e atalhos (CSS Inline 2 de 3: border-radius) -->
+        <aside class="arthur_lateral" style="border-radius: 8px;">
+            <h2>Filtros Rápidos</h2>
+            <p>Selecione por categoria:</p>
+            <ul class="lista-filtros-lateral">
+                <li><a href="#loja">⭐ Destaques da Loja</a></li>
+                <li><a href="#promocoes">🔥 Ofertas Especiais</a></li>
+                <li><a href="#generos">🎮 Gêneros e Categorias</a></li>
+                <li><a href="#plataformas">🖥️ Por Plataforma</a></li>
+                <li><a href="#lancamentos">📅 Calendário de Lançamentos</a></li>
+                <li><a href="#desejos">❤️ Minha Lista de Desejos</a></li>
+            </ul>
+
+            <div class="bloco-info-lateral">
+                <h3>Suporte Gamer</h3>
+                <p>Atendimento 24 horas por dia, 7 dias por semana para gamers de todo o Brasil.</p>
+                <p><strong>Envio de chaves:</strong> Imediato via e-mail.</p>
+            </div>
+        </aside>
+
+        <!-- CONTEÚDO CENTRAL: Agrupa as seções temáticas do portal -->
+        <div class="conteudo-central">
+
+            <!-- Banner Destaque Principal (CSS Inline 3 de 3: text-align) -->
+            <div class="banner-destaque rhuan_banner" style="text-align: center;">
+                <h2>Bem-vindo à DevGames!</h2>
+                <p>Encontre os melhores lançamentos, clássicos inesquecíveis e ofertas imbatíveis.</p>
+                
+                <a href="#loja" class="banner-link-inteiro" title="Clique para ver os jogos em destaque">
+                    <img src="img/banner.jpg" alt="Banner oficial DevGames com personagens de jogos famosos">
+                </a>
+
+                <div class="banner-acoes-extras">
+                    <a href="#loja" class="eduardo_btn banner-cta-btn">🎮 Ver Jogos em Destaque</a>
+                    <div class="banner-jogos-tags">
+                        <span>Franquias no Banner:</span>
+                        <span class="tag-destaque">Days Gone</span>
+                        <span class="tag-destaque">God of War</span>
+                        <span class="tag-destaque">The Last of Us</span>
+                        <span class="tag-destaque">Spider-Man</span>
+                        <span class="tag-destaque">Horizon</span>
+                        <span class="tag-destaque">Death Stranding</span>
+                        <span class="tag-destaque">Gran Turismo</span>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divisor">
+
+            <!-- SEÇÃO 1: LOJA (GRID A - 4 colunas de mesma proporção) -->
+            <section id="loja" class="secao-conteudo">
+                <h2>1. Jogos em Destaque</h2>
+                <p>Confira os títulos mais aclamados do momento com ativação digital instantânea:</p>
+
+                <div class="grid-a">
+                    <!-- Card 1: Spider-Man -->
+                    <article class="eduardo_card">
+                        <img src="img/capa_spiderman.jpg" alt="Capa do jogo Marvel's Spider-Man">
+                        <h3>Marvel's Spider-Man</h3>
+                        <p class="tag-destaque">Ação / Aventura</p>
+                        <p class="texto-destaque">R$ 199,00</p>
+                        <a href="#contato" class="eduardo_btn">Comprar Chave</a>
+                    </article>
+
+                    <!-- Card 2: Naruto Storm 4 -->
+                    <article class="eduardo_card">
+                        <img src="img/capa_naruto.jpg" alt="Capa do jogo Naruto Storm 4">
+                        <h3>Naruto Storm 4</h3>
+                        <p class="tag-destaque">Luta / Anime</p>
+                        <p class="texto-destaque">R$ 150,00</p>
+                        <a href="#contato" class="eduardo_btn">Comprar Chave</a>
+                    </article>
+
+                    <!-- Card 3: PES 2021 -->
+                    <article class="eduardo_card">
+                        <img src="img/capa_pes2021.jpg" alt="Capa do jogo PES 2021">
+                        <h3>PES 2021</h3>
+                        <p class="tag-destaque">Esportes / Futebol</p>
+                        <p class="texto-destaque">R$ 99,00</p>
+                        <a href="#contato" class="eduardo_btn">Comprar Chave</a>
+                    </article>
+
+                    <!-- Card 4: Batman Arkham Knight -->
+                    <article class="eduardo_card">
+                        <img src="img/capa_batman.jpg" alt="Capa do jogo Batman Arkham Knight">
+                        <h3>Batman Arkham Knight</h3>
+                        <p class="tag-destaque">Ação / Furtividade</p>
+                        <p class="texto-destaque">R$ 120,00</p>
+                        <a href="#contato" class="eduardo_btn">Comprar Chave</a>
+                    </article>
+                </div>
+
+                <p class="eduardo_voltar_topo"><a href="#topo" class="link-topo">↑ Voltar ao topo</a></p>
+            </section>
+
+            <hr class="divisor">
+
+            <!-- SEÇÃO 2: LANÇAMENTOS (Tabela 10x6) -->
+            <section id="lancamentos" class="secao-conteudo">
+                <h2>2. Cronograma de Lançamentos</h2>
+                <p>Fique por dentro das datas confirmadas e previsões dos jogos mais esperados da indústria:</p>
+
+                <div class="tabela-responsiva">
+                    <table class="arthur_tabela">
+                        <caption>Tabela 1: Cronograma Oficial de Lançamentos da Indústria Gamer (10 Linhas × 6 Colunas)</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Jogo</th>
+                                <th scope="col">Desenvolvedora</th>
+                                <th scope="col">Gênero</th>
+                                <th scope="col">Plataforma</th>
+                                <th scope="col">Previsão</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>EA Sports FC 27</td>
+                                <td>EA Vancouver</td>
+                                <td>Esporte / Futebol</td>
+                                <td>Multiplataforma</td>
+                                <td>Setembro/2026</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Grand Theft Auto VI</td>
+                                <td>Rockstar Games</td>
+                                <td>Mundo Aberto / Ação</td>
+                                <td>PS5 / Xbox Series</td>
+                                <td>Novembro/2026</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Resident Evil: Code Veronica Remake</td>
+                                <td>Capcom</td>
+                                <td>Survival Horror</td>
+                                <td>Multiplataforma</td>
+                                <td>Janeiro/2027</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>God of War: Laufey</td>
+                                <td>Santa Monica Studio</td>
+                                <td>Ação / Aventura</td>
+                                <td>PlayStation 5</td>
+                                <td>Fevereiro/2027</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Until Dawn 2</td>
+                                <td>Firesprite Games</td>
+                                <td>Terror Narrativo</td>
+                                <td>PS5 / PC</td>
+                                <td>Março/2027</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>The Witcher 4</td>
+                                <td>CD Projekt Red</td>
+                                <td>RPG de Ação</td>
+                                <td>Multiplataforma</td>
+                                <td>Abril/2027</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Marvel's Wolverine</td>
+                                <td>Insomniac Games</td>
+                                <td>Ação / Aventura</td>
+                                <td>PlayStation 5</td>
+                                <td>Junho/2027</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Hollow Knight: Silksong</td>
+                                <td>Team Cherry</td>
+                                <td>Metroidvania</td>
+                                <td>Multiplataforma</td>
+                                <td>Julho/2027</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Death Stranding 2: On the Beach</td>
+                                <td>Kojima Productions</td>
+                                <td>Aventura / Sci-Fi</td>
+                                <td>PlayStation 5</td>
+                                <td>Setembro/2027</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Fallout 5</td>
+                                <td>Bethesda Game Studios</td>
+                                <td>RPG Pós-Apocalíptico</td>
+                                <td>Multiplataforma</td>
+                                <td>Dezembro/2027</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="eduardo_voltar_topo"><a href="#topo" class="link-topo">↑ Voltar ao topo</a></p>
+            </section>
+
+            <hr class="divisor">
+
+            <!-- SEÇÃO 3: GALERIA (GRID B + Funcionalidade D: Carrossel Interativo) -->
+            <section id="galeria" class="secao-conteudo">
+                <h2>3. Galeria e Imagens de Gameplay</h2>
+                <p>Abaixo, veja a galeria panorâmica formatada com proporções desiguais (Grid B) e experimente nosso carrossel interativo com upload local.</p>
+
+                <!-- GRID B: Colunas desiguais 1fr 2fr 1fr -->
+                <h3>Galeria Panorâmica em Grid B (1fr 2fr 1fr)</h3>
+                <div class="grid-b">
+                    <img src="img/gameplay_spiderman_1.png" alt="Spider-Man enfrentando inimigos nas alturas de Nova York">
+                    <img src="img/gameplay_batman_1.jpg" alt="Batman observando Gotham City em destaque central">
+                    <img src="img/gameplay_naruto_1.jpg" alt="Naruto preparando o Rasengan">
+                    <img src="img/gameplay_spiderman_2.png" alt="Spider-Man se pendurando em teias entre os prédios">
+                    <img src="img/gameplay_batman_2.jpg" alt="Batmóvel disparando canhões em perseguição de alta velocidade">
+                    <img src="img/gameplay_naruto_2.jpg" alt="Sasuke enfrentando Naruto em duelo final">
+                </div>
+
+                <!-- FUNCIONALIDADE D: CARROSSEL DE GAMEPLAY COM INCLUSÃO DE IMAGEM -->
+                <div class="bloco-interativo eduardo_carrossel_container">
+                    <h3>Carrossel Interativo de Gameplay (Funcionalidade D)</h3>
+                    <p>Navegue pelas capturas dos jogos e adicione suas próprias imagens locais à sequência:</p>
+
+                    <div class="carrossel-moldura">
+                        <img id="carrossel-img" src="img/gameplay_spiderman_1.png" alt="Imagem exibida no carrossel de gameplay">
+                        <p id="carrossel-legenda" class="carrossel-legenda-texto">Spider-Man combatendo o crime nas alturas de Nova York</p>
+                        <p id="carrossel-contador" class="carrossel-contador-texto">1 / 4</p>
+                    </div>
+
+                    <div class="carrossel-controles">
+                        <button type="button" id="carrossel-btn-ant" class="eduardo_btn">◀ Anterior</button>
+                        <button type="button" id="carrossel-btn-prox" class="eduardo_btn">Próximo ▶</button>
+                    </div>
+
+                    <div class="carrossel-upload-box">
+                        <h4>Adicionar Nova Imagem ao Carrossel</h4>
+                        <label for="carrossel-file-input">Selecione uma imagem do computador:</label>
+                        <input type="file" id="carrossel-file-input" accept="image/png, image/jpeg">
+
+                        <label for="carrossel-legenda-input">Digite uma legenda descritiva:</label>
+                        <input type="text" id="carrossel-legenda-input" placeholder="Ex: Minha vitória espetacular no torneio...">
+
+                        <button type="button" id="carrossel-btn-adicionar" class="eduardo_btn">Adicionar Imagem</button>
+                    </div>
+                </div>
+
+                <p class="eduardo_voltar_topo"><a href="#topo" class="link-topo">↑ Voltar ao topo</a></p>
+            </section>
+
+            <hr class="divisor">
+
+            <!-- SEÇÃO 4: LISTA DE DESEJOS (Funcionalidade E) -->
+            <section id="desejos" class="secao-conteudo">
+                <h2>4. Lista de Desejos dos Jogadores</h2>
+                <p>Gerencie os títulos que você planeja adquirir. Você pode adicionar, marcar como Comprado ou Pendente, editar o título e filtrar sua lista em tempo real.</p>
+
+                <div class="arthur_desejos_container bloco-interativo">
+                    <!-- Formulário de inserção rápida -->
+                    <div class="desejos-input-grupo">
+                        <label for="desejo-texto-input">Nome do jogo desejado:</label>
+                        <div class="desejos-linha-adicionar">
+                            <input type="text" id="desejo-texto-input" placeholder="Ex: Grand Theft Auto VI">
+                            <button type="button" id="desejo-btn-adicionar" class="eduardo_btn">Adicionar à Lista</button>
+                        </div>
+                    </div>
+
+                    <!-- Filtros e Ação global -->
+                    <div class="desejos-acoes-painel">
+                        <div class="desejos-filtros">
+                            <span>Filtrar por:</span>
+                            <button type="button" class="filtro-btn ativo" data-filtro="todos">Todos</button>
+                            <button type="button" class="filtro-btn" data-filtro="pendentes">Pendentes</button>
+                            <button type="button" class="filtro-btn" data-filtro="comprados">Comprados</button>
+                        </div>
+                        <button type="button" id="desejo-btn-limpar-todos" class="btn-perigo">Apagar Todos</button>
+                    </div>
+
+                    <!-- Contadores Dinâmicos -->
+                    <div class="desejos-resumo-contadores">
+                        <span id="contador-total">Total: 0</span> | 
+                        <span id="contador-pendentes">Pendentes: 0</span> | 
+                        <span id="contador-comprados">Comprados: 0</span>
+                    </div>
+
+                    <!-- Lista dinâmica renderizada via JavaScript -->
+                    <ul id="lista-desejos-ul" class="desejos-lista-itens">
+                        <!-- Itens inseridos dinamicamente por createElement -->
+                    </ul>
+                </div>
+
+                <p class="eduardo_voltar_topo"><a href="#topo" class="link-topo">↑ Voltar ao topo</a></p>
+            </section>
+
+            <hr class="divisor">
+
+            <!-- SEÇÃO 5: PERSONALIZAR A LOJA (Funcionalidade F) -->
+            <section id="personalizar" class="secao-conteudo">
+                <h2>5. Personalize sua Loja (Funcionalidade F)</h2>
+                <p>Personalize a identidade visual da DevGames! Experimente o alternador geral de tema claro/escuro e altere de forma independente as cores de 5 áreas diferentes da página.</p>
+
+                <div class="rhuan_personalizar_painel bloco-interativo">
+                    <div class="painel-tema-geral">
+                        <h3>Modo Geral (Claro / Escuro)</h3>
+                        <p>Alterne entre os modos Claro e Escuro para a página inteira:</p>
+                        <div class="botoes-personalizar-topo">
+                            <button type="button" id="btn-tema-geral" class="eduardo_btn rhuan_btn">Ativar Modo Escuro</button>
+                        </div>
+                    </div>
+
+                    <div class="painel-areas-independentes">
+                        <h3>Controles Independentes de Cores (5 Áreas)</h3>
+                        <p>Cada botão abaixo alterna entre 2 esquemas visuais da respectiva área sem afetar as demais:</p>
+                        
+                        <div class="grade-botoes-personalizar">
+                            <div class="card-controle-cor">
+                                <strong>1. Cabeçalho</strong>
+                                <p>Alterna entre Cor Oficial e Roxo Gamer.</p>
+                                <button type="button" id="btn-cor-cabecalho" class="btn-custom-area">Mudar Cor do Cabeçalho</button>
+                            </div>
+
+                            <div class="card-controle-cor">
+                                <strong>2. Menu de Navegação</strong>
+                                <p>Alterna entre Grafite Clássico e Preto Profundo com Borda Dourada.</p>
+                                <button type="button" id="btn-cor-nav" class="btn-custom-area">Mudar Cor do Menu</button>
+                            </div>
+
+                            <div class="card-controle-cor">
+                                <strong>3. Cards de Jogos</strong>
+                                <p>Alterna entre Borda Neutra e Borda Neon com Sombra Vibrante.</p>
+                                <button type="button" id="btn-cor-cards" class="btn-custom-area">Mudar Cor dos Cards</button>
+                            </div>
+
+                            <div class="card-controle-cor">
+                                <strong>4. Barra Lateral</strong>
+                                <p>Alterna entre Fundo Neutro e Azul Noturno com Realce.</p>
+                                <button type="button" id="btn-cor-lateral" class="btn-custom-area">Mudar Cor da Lateral</button>
+                            </div>
+
+                            <div class="card-controle-cor">
+                                <strong>5. Rodapé</strong>
+                                <p>Alterna entre Escuro Padrão e Carmim Gamer com Linha Superior.</p>
+                                <button type="button" id="btn-cor-rodape" class="btn-custom-area">Mudar Cor do Rodapé</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="painel-restaurar">
+                        <h3>Restaurar Configurações Originais</h3>
+                        <p>Deseja voltar tudo às cores iniciais de fábrica da loja?</p>
+                        <button type="button" id="btn-restaurar-cores" class="btn-restaurar">Restaurar Cores Padrão</button>
+                    </div>
+                </div>
+
+                <p class="eduardo_voltar_topo"><a href="#topo" class="link-topo">↑ Voltar ao topo</a></p>
+            </section>
+
+            <hr class="divisor">
+
+            <!-- SEÇÃO 6: GÊNEROS E CATEGORIAS -->
+            <section id="generos" class="secao-conteudo">
+                <h2>6. Categorias e Gêneros dos Jogos</h2>
+                <p>Na DevGames, você navega pelos catálogos organizados pelos gêneros mais populares do mercado:</p>
+
+                <div class="arthur_grade_generos">
+                    <div class="genero-card">
+                        <h3>⚔️ Ação e Aventura</h3>
+                        <p>Jogos com narrativas imersivas, combate dinâmico e exploração intensa de cenários gigantescos.</p>
+                        <span class="tag-destaque">Spider-Man</span>
+                        <span class="tag-destaque">Batman Arkham</span>
+                        <span class="tag-destaque">God of War</span>
+                    </div>
+
+                    <div class="genero-card">
+                        <h3>🛡️ RPG (Role Playing Game)</h3>
+                        <p>Evolução de personagens, tomadas de decisão que moldam mundos e centenas de horas de conteúdo.</p>
+                        <span class="tag-destaque">The Witcher 4</span>
+                        <span class="tag-destaque">Fallout 5</span>
+                        <span class="tag-destaque">Final Fantasy</span>
+                    </div>
+
+                    <div class="genero-card">
+                        <h3>⚽ Esportes e Simulação</h3>
+                        <p>O melhor do futebol, basquete, automobilismo e esportes radicais com física precisa.</p>
+                        <span class="tag-destaque">EA Sports FC 27</span>
+                        <span class="tag-destaque">PES 2021</span>
+                        <span class="tag-destaque">Gran Turismo</span>
+                    </div>
+
+                    <div class="genero-card">
+                        <h3>🥊 Luta e Competição</h3>
+                        <p>Combos devastadores, confrontos locais e torneios multiplayer para testar seus reflexos.</p>
+                        <span class="tag-destaque">Naruto Storm 4</span>
+                        <span class="tag-destaque">Street Fighter</span>
+                        <span class="tag-destaque">Mortal Kombat</span>
+                    </div>
+                </div>
+
+                <p class="eduardo_voltar_topo"><a href="#topo" class="link-topo">↑ Voltar ao topo</a></p>
+            </section>
+
+            <hr class="divisor">
+
+            <!-- SEÇÃO 7: PLATAFORMAS -->
+            <section id="plataformas" class="secao-conteudo">
+                <h2>7. Plataformas Suportadas</h2>
+                <p>Nossas chaves digitais e mídias físicas atendem a todos os ecossistemas gamers contemporâneos:</p>
+
+                <div class="plataformas-container">
+                    <div class="plataforma-item">
+                        <h3>🖥️ PC Master Race</h3>
+                        <p>Compatível com plataformas como Steam, Epic Games Store e GOG, com suporte a taxas de quadros desbloqueadas e resolução 4K.</p>
+                    </div>
+                    <div class="plataforma-item">
+                        <h3>🎮 PlayStation 5</h3>
+                        <p>Aproveite gatilhos adaptáveis, resposta tátil e carregamentos ultrarrápidos através do SSD customizado.</p>
+                    </div>
+                    <div class="plataforma-item">
+                        <h3>💚 Xbox Series X | S</h3>
+                        <p>Quick Resume veloz, alta fidelidade gráfica e total compatibilidade com jogos retrocompatíveis.</p>
+                    </div>
+                    <div class="plataforma-item">
+                        <h3>🕹️ Nintendo Switch</h3>
+                        <p>A versatilidade incomparável de jogar no modo portátil ou na televisão com amigos e família.</p>
+                    </div>
+                </div>
+
+                <p class="eduardo_voltar_topo"><a href="#topo" class="link-topo">↑ Voltar ao topo</a></p>
+            </section>
+
+            <hr class="divisor">
+
+            <!-- SEÇÃO 8: PROMOÇÕES E OFERTAS -->
+            <section id="promocoes" class="secao-conteudo">
+                <h2>8. Ofertas e Promoções Especiais</h2>
+                <p>Confira as nossas promoções com descontos por tempo limitado para membros cadastrados:</p>
+
+                <div class="promocoes-grid">
+                    <article class="eduardo_promo_card rhuan_promo_card">
+                        <div class="selo-desconto rhuan_badge">-50% OFF</div>
+                        <h3>Super Pacote PlayStation Hits</h3>
+                        <p>Leve Spider-Man + Batman Arkham Knight com metade do preço original da loja.</p>
+                        <p class="preco-antigo">De: R$ 319,00</p>
+                        <p class="texto-destaque">Por: R$ 159,50</p>
+                    </article>
+
+                    <article class="eduardo_promo_card rhuan_promo_card">
+                        <div class="selo-desconto rhuan_badge">-40% OFF</div>
+                        <h3>Combo Anime & Luta</h3>
+                        <p>Naruto Shippuden Storm 4 completo com todas as DLCs do Road to Boruto inclusas.</p>
+                        <p class="preco-antigo">De: R$ 150,00</p>
+                        <p class="texto-destaque">Por: R$ 90,00</p>
+                    </article>
+
+                    <article class="eduardo_promo_card rhuan_promo_card">
+                        <div class="selo-desconto rhuan_badge">-60% OFF</div>
+                        <h3>Clássicos dos Esportes</h3>
+                        <p>eFootball PES 2021 Season Update com todos os pacotes de uniformes e elencos lendários.</p>
+                        <p class="preco-antigo">De: R$ 99,00</p>
+                        <p class="texto-destaque">Por: R$ 39,60</p>
+                    </article>
+                </div>
+
+                <p class="eduardo_voltar_topo"><a href="#topo" class="link-topo">↑ Voltar ao topo</a></p>
+            </section>
+
+            <hr class="divisor">
+
+            <!-- SEÇÃO 9: SOBRE A DEVGAMES -->
+            <section id="sobre" class="secao-conteudo">
+                <h2>9. Sobre a DevGames</h2>
+                <div class="sobre-box">
+                    <div class="sobre-texto">
+                        <p>A <strong>DevGames</strong> nasceu do projeto integrador de Desenvolvimento Front End idealizado pelo trio de estudantes e desenvolvedores <strong>Arthur Miguel</strong>, <strong>Eduardo Vinicius</strong> e <strong>Rhuan Urias</strong>.</p>
+                        <p>Nossa missão é unir paixão por tecnologia com uma experiência de usuário simples, dinâmica e envolvente, entregando jogos virtuais com segurança, transparência e sem intermediários desnecessários.</p>
+                        <p>Trabalhamos exclusivamente com chaves digitais 100% originais fornecidas diretamente pelas distribuidoras oficiais, garantindo ativação imediata e suporte técnico contínuo aos jogadores.</p>
+                    </div>
+                    <div class="sobre-imagem">
+                        <img src="img/sobre_devgames.jpg" alt="Personagens de jogos reunidos celebrando a comunidade DevGames">
+                    </div>
+                </div>
+
+                <p class="eduardo_voltar_topo"><a href="#topo" class="link-topo">↑ Voltar ao topo</a></p>
+            </section>
+
+            <hr class="divisor">
+
+            <!-- SEÇÃO 10: DICAS PARA GAMERS (Listas UL e OL) -->
+            <section id="dicas" class="secao-conteudo">
+                <h2>10. Dicas para Gamers e Otimização</h2>
+                <p>Aproveite ao máximo suas sessões de jogatina com as orientações técnicas da nossa equipe:</p>
+
+                <div class="dicas-container">
+                    <div class="dicas-bloco">
+                        <h3>Boas Práticas de Desempenho e FPS (Lista Não Ordenada)</h3>
+                        <ul class="arthur_dicas_lista">
+                            <li>Mantenha os drivers da placa de vídeo (Nvidia / AMD / Intel) sempre atualizados.</li>
+                            <li>Habilite o Modo de Jogo no sistema operacional para priorizar recursos de CPU e GPU.</li>
+                            <li>Monitore as temperaturas dos componentes usando ferramentas dedicadas.</li>
+                            <li>Instale seus jogos prioritariamente em unidades SSD NVMe para reduzir telas de carregamento.</li>
+                        </ul>
+                    </div>
+
+                    <div class="dicas-bloco">
+                        <h3>Guia de Instalação Segura de Jogos (Lista Ordenada)</h3>
+                        <ol class="arthur_dicas_lista">
+                            <li>Faça login na plataforma oficial correspondente à sua chave digital comprada.</li>
+                            <li>Acesse a aba "Ativar um Código de Produto" no menu superior da aplicação.</li>
+                            <li>Insira o código alfanumérico enviado para seu e-mail cadastrado.</li>
+                            <li>Confirme o resgate para vincular permanentemente o título à sua biblioteca.</li>
+                            <li>Inicie o download e garanta espaço em disco suficiente antes da instalação.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <p class="eduardo_voltar_topo"><a href="#topo" class="link-topo">↑ Voltar ao topo</a></p>
+            </section>
+
+            <hr class="divisor">
+
+            <!-- SEÇÃO 11: CADASTRO / CONTATO (Formulário Semântico com 13 campos) -->
+            <section id="contato" class="secao-conteudo">
+                <h2>11. Cadastro de Jogador na Plataforma</h2>
+                <p>Preencha os campos abaixo para criar sua conta gratuita, receber lançamentos e acumular pontos na DevGames:</p>
+
+                <form id="meuForm" class="arthur_form" novalidate>
+                    <fieldset>
+                        <legend>Dados Cadastrais do Jogador</legend>
+
+                        <!-- Campo 1: Nome Completo (text) -->
+                        <div class="campo-form">
+                            <label for="form-nome">Nome Completo:</label>
+                            <input type="text" id="form-nome" name="nome" placeholder="Digite seu nome completo">
+                        </div>
+
+                        <!-- Campo 2: E-mail (email) -->
+                        <div class="campo-form">
+                            <label for="form-email">E-mail Principal:</label>
+                            <input type="email" id="form-email" name="email" placeholder="seuemail@exemplo.com">
+                        </div>
+
+                        <!-- Campo 3: Confirmar E-mail (email) -->
+                        <div class="campo-form">
+                            <label for="form-email-confirma">Confirmar E-mail:</label>
+                            <input type="email" id="form-email-confirma" name="emailConfirma" placeholder="Confirme seu e-mail">
+                        </div>
+
+                        <!-- Campo 4: Senha (password) -->
+                        <div class="campo-form">
+                            <label for="form-senha">Senha de Acesso (mínimo 6 caracteres):</label>
+                            <input type="password" id="form-senha" name="senha" placeholder="Digite uma senha segura">
+                        </div>
+
+                        <!-- Campo 5: Confirmar Senha (password) -->
+                        <div class="campo-form">
+                            <label for="form-senha-confirma">Confirmar Senha:</label>
+                            <input type="password" id="form-senha-confirma" name="senhaConfirma" placeholder="Repita sua senha">
+                        </div>
+
+                        <!-- Campo 6: Idade (number) -->
+                        <div class="campo-form">
+                            <label for="form-idade">Idade:</label>
+                            <input type="number" id="form-idade" name="idade" placeholder="Ex: 18">
+                            <span class="aviso-idade">*Apenas maiores de 13 anos permitidos.</span>
+                        </div>
+
+                        <!-- Campo 7: Data de Nascimento (date) -->
+                        <div class="campo-form">
+                            <label for="form-nascimento">Data de Nascimento:</label>
+                            <input type="date" id="form-nascimento" name="nascimento">
+                        </div>
+
+                        <!-- Campo 8: Telefone (tel) -->
+                        <div class="campo-form">
+                            <label for="form-telefone">Telefone / WhatsApp com DDD:</label>
+                            <input type="tel" id="form-telefone" name="telefone" placeholder="Ex: (11) 98765-4321">
+                        </div>
+
+                        <!-- Campo 9: Plataforma Favorita (select) -->
+                        <div class="campo-form">
+                            <label for="form-plataforma">Plataforma Favorita de Jogos:</label>
+                            <select id="form-plataforma" name="plataforma">
+                                <option value="">Selecione sua plataforma principal...</option>
+                                <option value="pc">PC (Steam / Epic Games / GOG)</option>
+                                <option value="ps">PlayStation 5 / PlayStation 4</option>
+                                <option value="xbox">Xbox Series X|S / Xbox One</option>
+                                <option value="switch">Nintendo Switch</option>
+                            </select>
+                        </div>
+
+                        <!-- Campo 10: Gênero Favorito (select) -->
+                        <div class="campo-form">
+                            <label for="form-genero">Gênero de Jogo Favorito:</label>
+                            <select id="form-genero" name="genero">
+                                <option value="">Selecione o gênero preferido...</option>
+                                <option value="acao">Ação e Aventura</option>
+                                <option value="rpg">RPG (Role Playing Game)</option>
+                                <option value="esportes">Esportes e Corrida</option>
+                                <option value="luta">Luta e Torneios</option>
+                                <option value="terror">Terror e Sobrevivência</option>
+                            </select>
+                        </div>
+
+                        <!-- Campo 11: Receber novidades? (radio sim/nao) -->
+                        <div class="campo-form">
+                            <label>Deseja receber novidades e cupons por e-mail?</label>
+                            <div class="grupo-radio">
+                                <input type="radio" name="novidades" id="novidade-sim" value="sim">
+                                <label for="novidade-sim" class="label-inline">Sim, quero receber promoções</label>
+
+                                <input type="radio" name="novidades" id="novidade-nao" value="nao">
+                                <label for="novidade-nao" class="label-inline">Não, apenas cadastro básico</label>
+                            </div>
+                        </div>
+
+                        <!-- Campo 12: Biografia / Mensagem (textarea) -->
+                        <div class="campo-form">
+                            <label for="form-mensagem">Conte um pouco sobre você e seus jogos favoritos:</label>
+                            <textarea id="form-mensagem" name="mensagem" rows="4" placeholder="Ex: Sou gamer desde a infância, apaixonado por histórias de RPG e aventuras cooperativas..."></textarea>
+                        </div>
+
+                        <!-- Campo 13: Aceite dos Termos (checkbox) -->
+                        <div class="campo-form">
+                            <div class="grupo-checkbox">
+                                <input type="checkbox" id="form-termos" name="termos">
+                                <label for="form-termos" class="label-inline">Li e concordo com os Termos de Uso e Política de Privacidade da DevGames</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" id="form-btn-enviar" class="eduardo_btn">Concluir Cadastro</button>
+                    </fieldset>
+                </form>
+
+                <p class="eduardo_voltar_topo"><a href="#topo" class="link-topo">↑ Voltar ao topo</a></p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER: Utilizado uma única vez -->
+    <footer class="eduardo_rodape">
+        <p>&copy; 2026 DevGames - Trabalho Prático Integrador de Desenvolvimento Front End.</p>
+        <p>Desenvolvido pelo trio <strong>Arthur Miguel</strong>, <strong>Eduardo Vinicius</strong> e <strong>Rhuan Urias</strong>.</p>
+        <p>Todos os direitos reservados à marca DevGames.</p>
+    </footer>
+
+    <!-- Script JavaScript externo vinculado ao final do documento -->
+    <script src="script.js"></script>
+</body>
+</html>
